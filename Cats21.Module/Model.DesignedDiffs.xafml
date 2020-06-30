@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Cats21">
+  <BOModel>
+    <Class Name="Cats21.Module.BusinessObjects.Cat" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

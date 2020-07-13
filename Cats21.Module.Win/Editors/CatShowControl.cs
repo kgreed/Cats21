@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using Cats21.Module.BusinessObjects;
+using DevExpress.ExpressApp.Utils;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
@@ -94,7 +95,9 @@ namespace Cats21.Module.Win.Editors
                 {
                     var item = new GalleryItem
                     {
-                        Caption = sec.EventSectionName, Image = Image.FromFile("c:\\images\\ford.jpg")
+                        // Caption = sec.EventSectionName, Image = Image.FromFile("c:\\images\\ford.jpg")
+                        Caption = sec.EventSectionName,
+                        Image = ImageLoader.Instance.GetImageInfo("ford").Image
                     };
                     group.Items.Add(item);
                 }

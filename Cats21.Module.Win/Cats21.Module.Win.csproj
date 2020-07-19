@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CatObjectViewController.cs" />
+    <Compile Include="Controllers\InLineEditController.cs" />
     <Compile Include="Editors\CatShowGroupCaptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

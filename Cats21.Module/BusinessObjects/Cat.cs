@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using DevExpress.ExpressApp.Validation.AllContextsView;
 using DevExpress.Persistent.Base;
 namespace Cats21.Module.BusinessObjects
 {
@@ -8,8 +7,6 @@ namespace Cats21.Module.BusinessObjects
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        [NotMapped]
-        public CatShow CatShow { get; set; }
+        [NotMapped] public CatShow CatShow { get; set; }
     }
 }

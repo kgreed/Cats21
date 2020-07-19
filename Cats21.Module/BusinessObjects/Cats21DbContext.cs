@@ -21,6 +21,7 @@ namespace Cats21.Module.BusinessObjects {
 		}
 		public Cats21DbContext() {
 		}
+		public DbSet<MoggyPic> MoggyPics { get; set; }
 		public DbSet<Cat> Cats { get; set; }
 		public DbSet<ModuleInfo> ModulesInfo { get; set; }
 	    public DbSet<PermissionPolicyRole> Roles { get; set; }

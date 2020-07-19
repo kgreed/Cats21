@@ -99,6 +99,8 @@
     <Compile Include="BusinessObjects\CatEventName.cs" />
     <Compile Include="BusinessObjects\Cats21ContextInitializer.cs" />
     <Compile Include="BusinessObjects\CatShow.cs" />
+    <Compile Include="BusinessObjects\ICanEditInLine.cs" />
+    <Compile Include="BusinessObjects\MoggyPic.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>

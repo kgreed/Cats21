@@ -66,6 +66,7 @@ namespace Cats21.Module.Win.Editors
             // 
             this.Controls.Add(this.galleryControl1);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(200, 200);
             this.Name = "CatShowControl";
             this.Size = new System.Drawing.Size(760, 425);
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).EndInit();

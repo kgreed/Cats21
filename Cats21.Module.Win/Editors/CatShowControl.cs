@@ -16,9 +16,9 @@ namespace Cats21.Module.Win.Editors
         public CatShowControl()
         {
             InitializeComponent();
-            SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
-            this.AutoSize = true;
-            galleryControl1.AutoSize = true;
+            //SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
+            //this.AutoSize = true;
+            //galleryControl1.AutoSize = true;
         }
 
         private void InitializeComponent()
@@ -41,8 +41,10 @@ namespace Cats21.Module.Win.Editors
             // 
             // galleryControl1
             // 
+            this.galleryControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.galleryControl1.Controls.Add(this.galleryControlClient1);
-            this.galleryControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             // 
             // 
             // 

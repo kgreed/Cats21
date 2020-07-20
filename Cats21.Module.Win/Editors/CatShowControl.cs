@@ -16,6 +16,9 @@ namespace Cats21.Module.Win.Editors
         public CatShowControl()
         {
             InitializeComponent();
+            SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
+            this.AutoSize = true;
+            galleryControl1.AutoSize = true;
         }
 
         private void InitializeComponent()
@@ -45,9 +48,9 @@ namespace Cats21.Module.Win.Editors
             // 
             this.galleryControl1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryControl1_Gallery_ItemClick);
             this.galleryControl1.Gallery.ItemDoubleClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryControl1_Gallery_ItemDoubleClick);
-            this.galleryControl1.Location = new System.Drawing.Point(0, 48);
+            this.galleryControl1.Location = new System.Drawing.Point(0, 58);
             this.galleryControl1.Name = "galleryControl1";
-            this.galleryControl1.Size = new System.Drawing.Size(760, 377);
+            this.galleryControl1.Size = new System.Drawing.Size(760, 367);
             this.galleryControl1.TabIndex = 1;
             this.galleryControl1.Text = "galleryControl1";
             // 
@@ -55,7 +58,7 @@ namespace Cats21.Module.Win.Editors
             // 
             this.galleryControlClient1.GalleryControl = this.galleryControl1;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(739, 373);
+            this.galleryControlClient1.Size = new System.Drawing.Size(739, 363);
             // 
             // CatShowControl
             // 

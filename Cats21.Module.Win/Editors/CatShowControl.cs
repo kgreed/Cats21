@@ -19,64 +19,61 @@ namespace Cats21.Module.Win.Editors
             InitializeComponent();
             //SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
             galleryControl1.Gallery.AutoSize = GallerySizeMode.Vertical;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            //AutoSize = true;
+            //AutoSizeMode = AutoSizeMode.GrowAndShrink;
             //galleryControl1.AutoSize = true;
         }
 
         private void InitializeComponent()
         {
-            label1 = new Label();
-            galleryControl1 = new myGalleryControl();
-            galleryControlClient1 = new GalleryControlClient();
-            AutoSize = true;
-            ((ISupportInitialize) galleryControl1).BeginInit();
-            galleryControl1.SuspendLayout();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.galleryControl1 = new Cats21.Module.Win.Editors.myGalleryControl();
+            this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
+            this.galleryControl1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(17, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(61, 13);
-            label1.TabIndex = 0;
-            label1.Text = "CAT SHOW";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CAT SHOW";
             // 
             // galleryControl1
             // 
-            galleryControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom
-                                                      | AnchorStyles.Left
-                                                      | AnchorStyles.Right;
-            galleryControl1.Controls.Add(galleryControlClient1);
-            // 
-            // 
-            // 
-            galleryControl1.Gallery.ItemClick += galleryControl1_Gallery_ItemClick;
-            galleryControl1.Gallery.ItemDoubleClick += galleryControl1_Gallery_ItemDoubleClick;
-            galleryControl1.Location = new Point(0, 58);
-            galleryControl1.Name = "galleryControl1";
-            galleryControl1.Size = new Size(760, 367);
-            galleryControl1.TabIndex = 1;
-            galleryControl1.Text = "galleryControl1";
+            this.galleryControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.galleryControl1.Controls.Add(this.galleryControlClient1);
+            this.galleryControl1.Location = new System.Drawing.Point(0, 58);
+            this.galleryControl1.Name = "galleryControl1";
+            this.galleryControl1.Size = new System.Drawing.Size(760, 367);
+            this.galleryControl1.TabIndex = 1;
+            this.galleryControl1.Text = "galleryControl1";
+            this.galleryControl1.Resize += new System.EventHandler(this.galleryControl1_Resize);
             // 
             // galleryControlClient1
             // 
-            galleryControlClient1.GalleryControl = galleryControl1;
-            galleryControlClient1.Location = new Point(2, 2);
-            galleryControlClient1.Size = new Size(739, 363);
+            this.galleryControlClient1.GalleryControl = this.galleryControl1;
+            this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
+            this.galleryControlClient1.Size = new System.Drawing.Size(739, 363);
             // 
             // CatShowControl
             // 
-            Controls.Add(galleryControl1);
-            Controls.Add(label1);
-            MinimumSize = new Size(200, 200);
-            Name = "CatShowControl";
-            Size = new Size(760, 425);
-            ((ISupportInitialize) galleryControl1).EndInit();
-            galleryControl1.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoSize = true;
+            this.Controls.Add(this.galleryControl1);
+            this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(200, 200);
+            this.Name = "CatShowControl";
+            this.Size = new System.Drawing.Size(760, 425);
+            ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).EndInit();
+            this.galleryControl1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         public void LoadValue(CatShow catShow)
@@ -115,7 +112,7 @@ namespace Cats21.Module.Win.Editors
                 g.Items.Add(new GalleryItem {Caption = $"caption {i}"});
                 i++;
             }
-            gc.Refresh();
+            // gc.Refresh();
             var sz = new Size
             {
                 Height = galleryControl1.Gallery.GalleryControl.Height,
@@ -133,6 +130,15 @@ namespace Cats21.Module.Win.Editors
         private void galleryControl1_Gallery_ItemDoubleClick(object sender, GalleryItemClickEventArgs e)
         {
             MessageBox.Show("Double Click");
+        }
+
+        private void galleryControl1_Resize(object sender, System.EventArgs e)
+        {
+            var top = galleryControl1.Top;
+            var ctrl = sender as myGalleryControl;
+            var oldSize = ctrl.Size;
+            var newSize = new Size(oldSize.Width, oldSize.Height+top);
+            this.MinimumSize = newSize;
         }
     }
 }

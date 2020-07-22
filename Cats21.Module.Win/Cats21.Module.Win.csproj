@@ -146,6 +146,14 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Editors\CatShowEditor.cs" />
+    <Compile Include="Editors\myGallery.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\myGalleryControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\myGalleryItemGroupViewInfo.cs" />
+    <Compile Include="Editors\myStandaloneGalleryViewInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>

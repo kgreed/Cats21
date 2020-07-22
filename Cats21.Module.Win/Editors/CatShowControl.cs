@@ -9,7 +9,7 @@ namespace Cats21.Module.Win.Editors
 {
     public class CatShowControl : XtraUserControl
     {
-        private DevExpress.XtraBars.Ribbon.GalleryControl galleryControl1;
+        private  myGalleryControl galleryControl1;
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient1;
         private System.Windows.Forms.Label label1;
 
@@ -17,15 +17,21 @@ namespace Cats21.Module.Win.Editors
         {
             InitializeComponent();
             //SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
-            //this.AutoSize = true;
+            galleryControl1.Gallery.AutoSize = GallerySizeMode.Vertical;
+           
+       
+           this.AutoSize = true;
+           this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             //galleryControl1.AutoSize = true;
+
         }
 
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.galleryControl1 = new DevExpress.XtraBars.Ribbon.GalleryControl();
+            this.galleryControl1 = new myGalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
+            this.AutoSize = true;
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
             this.galleryControl1.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +125,14 @@ namespace Cats21.Module.Win.Editors
                 i++;
             }
 
+         
+
+            var sz = new Size
+            {
+                Height = galleryControl1.Gallery.GalleryControl.Height,
+                Width = galleryControl1.Gallery.GalleryControl.Width
+            };
+            galleryControl1.MinimumSize = sz;
             gc.Refresh();
         }
 

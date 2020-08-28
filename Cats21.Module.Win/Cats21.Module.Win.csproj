@@ -65,6 +65,7 @@
     <Reference Include="DevExpress.ExpressApp.Win.v20.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Persistent.Base.v20.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -110,6 +111,8 @@
     <Reference Include="System.Drawing">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -138,6 +141,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CatEventController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CatEventController.Designer.cs">
+      <DependentUpon>CatEventController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CatObjectViewController.cs" />
     <Compile Include="Editors\CatShowGroupCaptionControl.cs">
       <SubType>UserControl</SubType>
@@ -163,11 +172,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\CatEventController.resx">
+      <DependentUpon>CatEventController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\CatShowControl.resx">
       <DependentUpon>CatShowControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editors\CatShowGroupCaptionControl.resx">
       <DependentUpon>CatShowGroupCaptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\myGalleryControl.resx">
+      <DependentUpon>myGalleryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />

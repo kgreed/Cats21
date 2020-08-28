@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Cats21.Module.BusinessObjects;
@@ -12,6 +13,7 @@ namespace Cats21.Module.Win.Editors
     {
         private myGalleryControl galleryControl1;
         private GalleryControlClient galleryControlClient1;
+        private Button button1;
         private Label label1;
 
         public CatShowControl()
@@ -29,6 +31,7 @@ namespace Cats21.Module.Win.Editors
             this.label1 = new System.Windows.Forms.Label();
             this.galleryControl1 = new Cats21.Module.Win.Editors.myGalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
             this.galleryControl1.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +64,20 @@ namespace Cats21.Module.Win.Editors
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
             this.galleryControlClient1.Size = new System.Drawing.Size(739, 363);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(492, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 33);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CatShowControl
             // 
             this.AutoSize = true;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.galleryControl1);
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(200, 200);
@@ -113,12 +127,12 @@ namespace Cats21.Module.Win.Editors
                 i++;
             }
             // gc.Refresh();
-            var sz = new Size
-            {
-                Height = galleryControl1.Gallery.GalleryControl.Height,
-                Width = galleryControl1.Gallery.GalleryControl.Width
-            };
-            galleryControl1.MinimumSize = sz;
+            //var sz = new Size
+            //{
+            //    Height = galleryControl1.Gallery.GalleryControl.Height,
+            //    Width = galleryControl1.Gallery.GalleryControl.Width
+            //};
+            //galleryControl1.MinimumSize = sz;
             gc.Refresh();
         }
 
@@ -139,6 +153,12 @@ namespace Cats21.Module.Win.Editors
             var oldSize = ctrl.Size;
             var newSize = new Size(oldSize.Width, oldSize.Height+top);
             this.MinimumSize = newSize;
+        }
+        public event Action PickEvent = delegate { };
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            PickEvent();
         }
     }
 }

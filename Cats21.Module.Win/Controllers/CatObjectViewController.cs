@@ -4,6 +4,9 @@ using Cats21.Module.BusinessObjects;
 using DevExpress.ExpressApp;
 namespace Cats21.Module.Win.Controllers
 {
+    using DevExpress.ExpressApp;
+
+    // ...
     public class CatObjectViewController : ObjectViewController<ListView, Cat>
     {
         protected override void OnActivated()

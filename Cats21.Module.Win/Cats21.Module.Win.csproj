@@ -148,6 +148,10 @@
       <DependentUpon>CatEventController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CatObjectViewController.cs" />
+    <Compile Include="Controllers\MyDialog.cs" />
+    <Compile Include="Controllers\MyDialogController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\CatShowGroupCaptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +168,7 @@
     <Compile Include="Editors\myGalleryItemGroupViewInfo.cs" />
     <Compile Include="Editors\myStandaloneGalleryViewInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowViewHelper.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>

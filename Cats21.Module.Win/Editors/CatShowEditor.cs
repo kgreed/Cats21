@@ -35,11 +35,13 @@ namespace Cats21.Module.Win.Editors
 
         private void Control_PickEvent()
         {
-            var controller = application.CreateController<CatEventController>();
-            var act = controller.Actions.FirstOrDefault();  
-            var popupAction = act as PopupWindowShowAction;
-            var helper = new PopupWindowShowActionHelper(popupAction);
-            helper.ShowPopupWindow();  // raises null reference error after customizing the pop up window 
+            //var controller = application.CreateController<CatEventController>();
+            //var act = controller.Actions.FirstOrDefault();  
+            //var popupAction = act as PopupWindowShowAction;
+            //var helper = new PopupWindowShowActionHelper(popupAction);
+            //helper.ShowPopupWindow();  // raises null reference error after customizing the pop up window 
+            var controller = application.CreateController<MyDialogController>();
+            Debug.Print("Now what?");
         }
 
         protected override void ReadValueCore()

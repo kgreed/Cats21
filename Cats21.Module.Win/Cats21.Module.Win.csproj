@@ -180,6 +180,9 @@
     <EmbeddedResource Include="Controllers\CatEventController.resx">
       <DependentUpon>CatEventController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\MyDialogController.resx">
+      <DependentUpon>MyDialogController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\CatShowControl.resx">
       <DependentUpon>CatShowControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,8 +1,9 @@
-﻿using DevExpress.ExpressApp.DC;
+﻿using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.DC;
 namespace Cats21.Module.Win.Controllers
 {
     [DomainComponent]
-    public class MyDialog
+    public class MyDialog :NonPersistentBaseObject
     {
         public MyDialog(string message)
         {

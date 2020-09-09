@@ -13,6 +13,7 @@ using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Win.Editors;
+using View = DevExpress.ExpressApp.View;
 namespace Cats21.Module.Win.Editors
 {
     [PropertyEditor(typeof(CatShow), true)]
@@ -33,15 +34,22 @@ namespace Cats21.Module.Win.Editors
 
         }
 
+        // In the editor
+       
         private void Control_PickEvent()
         {
-            //var controller = application.CreateController<CatEventController>();
-            //var act = controller.Actions.FirstOrDefault();  
-            //var popupAction = act as PopupWindowShowAction;
-            //var helper = new PopupWindowShowActionHelper(popupAction);
-            //helper.ShowPopupWindow();  // raises null reference error after customizing the pop up window 
-            var controller = application.CreateController<MyDialogController>();
-            Debug.Print("Now what?");
+            try
+            {
+                var controller = application.CreateController<MyDialogController>();
+                controller.ShowDialog();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Console.WriteLine(e);
+                throw;
+            }
+  
         }
 
         protected override void ReadValueCore()
